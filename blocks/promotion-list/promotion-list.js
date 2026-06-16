@@ -65,7 +65,7 @@ export default async function decorate(block) {
     if (isLimit6 || isFeatured) {
       const actionContainer = document.createElement('div');
       actionContainer.classList.add('promotion-action-container');
-      actionContainer.innerHTML = `<a href="https://main--fictional-chainsaw--thanawat-code.aem.page/promotions" class="button primary">ดูโปรโมชั่นทั้งหมด (View All)</a>`;
+      actionContainer.innerHTML = `<a href="https://main--fictional-chainsaw--thanawat-code.aem.page/promotion" class="button primary">ดูโปรโมชั่นทั้งหมด (View All)</a>`;
       block.prepend(actionContainer);
     }
     
