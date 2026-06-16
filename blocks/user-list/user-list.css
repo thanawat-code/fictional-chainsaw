@@ -1,33 +1,129 @@
-.user-list-inner {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  padding: 20px 0;
-}
-
-.user-card {
-  border: 1px solid #e0e0e0;
+.user-form-container {
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 
-.user-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
+.user-form-container h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.form-group {
   margin-bottom: 12px;
 }
 
-.user-name {
-  margin: 0 0 8px 0;
-  font-size: 1.1rem;
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.user-email {
-  margin: 0;
-  color: #666;
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #0284c7;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0369a1;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+/* ส่วนแสดงรายการการ์ด */
+.user-list-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.user-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-info .name {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+.user-info .email {
+  margin: 0 0 15px 0;
+  color: #6b7280;
   font-size: 0.9rem;
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 12px;
+}
+
+.edit-btn, .delete-btn {
+  flex: 1;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.edit-btn {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.edit-btn:hover {
+  background-color: #fde68a;
+}
+
+.delete-btn {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.delete-btn:hover {
+  background-color: #fca5a5;
+}
+
+.loading, .no-data, .error {
+  text-align: center;
+  grid-column: 1 / -1;
+  color: #666;
+  padding: 20px;
 }
