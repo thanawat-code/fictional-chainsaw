@@ -19,8 +19,17 @@ export default async function decorate(block) {
     listContainer.classList.add('promotion-list-inner');
     block.append(listContainer);
     
+    // 💡 1. เพิ่มการเช็คคลาส 'limit-6' จากในตาราง Docs ของคุณ
     const isFeatured = block.classList.contains('featured');
-    const displayPromos = isFeatured ? promotions.slice(0, 4) : promotions;
+    const isLimit6 = block.classList.contains('limit-6');
+    
+    // 💡 2. เลือกตัดจำนวนไอเทมตามคลาสที่เจอ (ถ้าเจอ limit-6 ตัดเหลือ 6, ถ้าเจอ featured ตัดเหลือ 4)
+    let displayPromos = promotions;
+    if (isLimit6) {
+      displayPromos = promotions.slice(0, 6);
+    } else if (isFeatured) {
+      displayPromos = promotions.slice(0, 4);
+    }
     
     displayPromos.forEach(promo => {
       const card = document.createElement('div');
@@ -37,7 +46,8 @@ export default async function decorate(block) {
       listContainer.append(card);
     });
 
-    if (isFeatured) {
+    // 💡 3. ถ้าเป็นแบบจำกัดจำนวน (ไม่ว่าจะ 4 หรือ 6) ให้แสดงปุ่ม "ดูโปรโมชั่นทั้งหมด" ด้านล่าง
+    if (isLimit6 || isFeatured) {
       const actionContainer = document.createElement('div');
       actionContainer.classList.add('promotion-action-container');
       actionContainer.innerHTML = `<a href="/promotions" class="button primary">ดูโปรโมชั่นทั้งหมด (View All)</a>`;
