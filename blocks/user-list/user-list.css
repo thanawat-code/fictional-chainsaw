@@ -1,0 +1,33 @@
+.user-list-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.user-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.user-name {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.user-email {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
