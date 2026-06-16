@@ -57,6 +57,7 @@
 }
 
 /* ส่วนแสดงรายการการ์ด */
+
 .user-list-inner {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -73,6 +74,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.user-info .user-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  display: block;
 }
 
 .user-info .name {
