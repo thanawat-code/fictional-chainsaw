@@ -60,7 +60,7 @@ export default async function decorate(block) {
         card.classList.add('user-card');
         card.innerHTML = `
           <div class="user-info">
-            <img src="${user.avatar}" alt="${user.name}" class="user-avatar">
+            <img src="${user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=random`}" alt="${user.name}" class="user-avatar">
             <h4 class="name">${user.name}</h4>
             <p class="email">${user.email}</p>
           </div>
