@@ -104,7 +104,13 @@
 
 .promotion-action-container {
   display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.promotion-load-more-container {
+  display: flex;
   justify-content: center;
   margin-top: 32px;
-  padding-bottom: 16px;
+  padding-bottom: 24px;
 }
