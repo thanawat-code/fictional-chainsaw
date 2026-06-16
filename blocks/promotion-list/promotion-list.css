@@ -101,3 +101,10 @@
   font-size: 1.2rem;
   font-weight: 500;
 }
+
+.promotion-action-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  padding-bottom: 16px;
+}

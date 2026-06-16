@@ -19,7 +19,10 @@ export default async function decorate(block) {
     listContainer.classList.add('promotion-list-inner');
     block.append(listContainer);
     
-    promotions.forEach(promo => {
+    const isFeatured = block.classList.contains('featured');
+    const displayPromos = isFeatured ? promotions.slice(0, 4) : promotions;
+    
+    displayPromos.forEach(promo => {
       const card = document.createElement('div');
       card.classList.add('promotion-card');
       card.innerHTML = `
@@ -33,6 +36,13 @@ export default async function decorate(block) {
       `;
       listContainer.append(card);
     });
+
+    if (isFeatured) {
+      const actionContainer = document.createElement('div');
+      actionContainer.classList.add('promotion-action-container');
+      actionContainer.innerHTML = `<a href="/promotions" class="button primary">ดูโปรโมชั่นทั้งหมด (View All)</a>`;
+      block.append(actionContainer);
+    }
     
   } catch (err) {
     block.innerHTML = '<p class="error">เกิดข้อผิดพลาดในการโหลดข้อมูล</p>';
