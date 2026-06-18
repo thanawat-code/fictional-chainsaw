@@ -108,6 +108,18 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
+function initStickyHeader() {
+  const headerWrapper = document.querySelector('header .nav-wrapper');
+  if (!headerWrapper) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      headerWrapper.classList.add('is-sticky');
+    } else {
+      headerWrapper.classList.remove('is-sticky');
+    }
+  });
+}
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -168,4 +180,6 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  initStickyHeader();
 }

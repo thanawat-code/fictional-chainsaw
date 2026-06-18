@@ -1,0 +1,134 @@
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  max-height: 700px;
+  overflow: hidden;
+  margin-top: var(--nav-height); /* Align below header */
+}
+
+.hero-carousel-track {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.hero-carousel-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero-carousel-slide .hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-carousel-slide .hero-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+}
+
+.hero-carousel-slide .hero-image img,
+.hero-carousel-slide .hero-image picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-carousel-slide .hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  color: var(--white);
+}
+
+.hero-category {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+  max-width: 600px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin: 0 0 32px 0;
+  max-width: 500px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.hero-carousel-indicators {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+}
+
+.hero-carousel-dot {
+  width: 48px;
+  height: 4px;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+
+.hero-carousel-dot.active {
+  background: var(--secondary-color);
+}
+
+@media (width >= 900px) {
+  .hero-carousel {
+    height: 80vh;
+  }
+  
+  .hero-content h2 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.25rem;
+  }
+}
