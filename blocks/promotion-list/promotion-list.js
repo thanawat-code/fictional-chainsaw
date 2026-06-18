@@ -1,5 +1,5 @@
 export default async function decorate(block) {
-  const apiEndpoint = 'https://6a30ec2ea7f8866418d6aec8.mockapi.io/promotion';
+  const apiEndpoint = 'https://galley-projector-salt.ngrok-free.dev/api/v1/offers';
   
   block.innerHTML = '<p class="loading">กำลังโหลดโปรโมชั่น...</p>';
   

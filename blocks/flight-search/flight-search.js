@@ -77,7 +77,7 @@ export default async function decorate(block) {
   });
 
   // Autocomplete API Fetch Logic
-  const apiEndpoint = 'https://6a30ec2ea7f8866418d6aec8.mockapi.io/airports';
+  const apiEndpoint = 'https://galley-projector-salt.ngrok-free.dev/api/v1/airports';
   let airports = [];
 
   const fetchAirports = async () => {
