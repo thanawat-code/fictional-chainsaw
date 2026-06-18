@@ -83,7 +83,11 @@ export default async function decorate(block) {
   const fetchAirports = async () => {
     if (airports.length > 0) return airports;
     try {
-      const response = await fetch(apiEndpoint);
+      const response = await fetch(apiEndpoint, {
+        headers: {
+          'ngrok-skip-browser-warning': 'true'
+        }
+      });
       if (!response.ok) throw new Error('API Response Error');
       airports = await response.json();
     } catch (error) {

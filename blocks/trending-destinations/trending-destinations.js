@@ -3,7 +3,11 @@ export default async function decorate(block) {
   block.innerHTML = '<div class="loading">Loading trending destinations...</div>';
 
   try {
-    const response = await fetch(apiEndpoint);
+    const response = await fetch(apiEndpoint, {
+      headers: {
+        'ngrok-skip-browser-warning': 'true'
+      }
+    });
     if (!response.ok) throw new Error('Failed to fetch trending destinations');
     const data = await response.json();
     

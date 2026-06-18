@@ -4,7 +4,11 @@ export default async function decorate(block) {
   block.innerHTML = '<p class="loading">กำลังโหลดโปรโมชั่น...</p>';
   
   try {
-    const res = await fetch(apiEndpoint);
+    const res = await fetch(apiEndpoint, {
+      headers: {
+        'ngrok-skip-browser-warning': 'true'
+      }
+    });
     if (!res.ok) throw new Error();
     const promotions = await res.json();
     

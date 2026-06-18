@@ -25,7 +25,11 @@ export default async function decorate(block) {
   // 2. Fetch API Data if authored data is missing
   if (slidesData.length === 0) {
     try {
-      const response = await fetch(apiEndpoint);
+      const response = await fetch(apiEndpoint, {
+        headers: {
+          'ngrok-skip-browser-warning': 'true'
+        }
+      });
       if (response.ok) {
         const data = await response.json();
         // Assume API returns: [{ id, title, description, image, ctaText, ctaLink, category }]
